@@ -20,7 +20,7 @@ ${DOWNLOAD_DIR}=    ${CURDIR}
 Collect Search Query From User
     Add heading     Input URL of order file
     Add text input    search    label=Search query
-    Add text      URL : https://robotsparebinindustries.com/orders.csv
+    Add text      URL : "https://robotsparebinindustries.com/orders.csv"
     ${response}=    Run dialog
     [Return]    ${response.search}
 
@@ -141,4 +141,4 @@ Order robots from RobotSpareBin Industries Inc
         Go to order another robot
     END
     Create a ZIP file of the receipts
-    
+    [Teardown]  Close All Browsers
